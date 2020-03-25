@@ -10,7 +10,7 @@ const flash = require('connect-flash');
 const app = express();
 
 // Settings
-app.set('port', process.env.PORT || 4000);
+app.set('port', process.env.PORT || 5000);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', exphbs({
     defaultLayout: 'main',
@@ -42,6 +42,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use(require('./routes/index.routes'));
+app.use(require('./routes/gamelist.routes'));
 
 // Static Files
 app.use(express.static(path.join(__dirname, 'public')));
