@@ -2,10 +2,11 @@ const { Router } = require('express');
 const router = Router();
 
 const { 
-    renderNewGameForm, 
+    renderNewGameForm,
+    renderEditForm, 
+    renderInfoGame, 
     createNewGame, 
     renderGames, 
-    renderEditForm, 
     updateGame, 
     deleteGame 
 } = require('../controllers/gamelist.controller');
@@ -17,11 +18,14 @@ router.post('/games/new-game', createNewGame);
 // Get All Games
 router.get('/games', renderGames);
 
+// Get One Game
+router.get('/games/info/:id', renderInfoGame);
+
 // Edit Game
-router.get('/games/edit/', renderEditForm);
-//router.put('/games/edit/:id', updateGame);
+router.get('/games/edit/:id', renderEditForm);
+router.put('/games/edit/:id', updateGame);
 
 // Delete Game
-router.delete('/games/delete/:id', deleteGame);
+router.get('/games/delete/:id', deleteGame);
 
 module.exports = router;
