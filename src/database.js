@@ -1,7 +1,7 @@
 const mongooge = require('mongoose');
 
-const { NOTES_APP_MONGODB_HOST, NOTES_APP_MONGODB_DATABASE } = process.env;
-const MONGODB_URI = `mongodb://${NOTES_APP_MONGODB_HOST}/${NOTES_APP_MONGODB_DATABASE}`
+const { GameList_APP_MONGODB_HOST, GameList_APP_MONGODB_DATABASE } = process.env;
+const MONGODB_URI = `mongodb://${GameList_APP_MONGODB_HOST}/${GameList_APP_MONGODB_DATABASE}`
 
 mongooge.connect(MONGODB_URI , {
     useUnifiedTopology: true,
