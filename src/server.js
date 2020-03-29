@@ -10,7 +10,8 @@ const flash = require('connect-flash');
 const multer = require('multer')
 
 // Helpers
-const {inArray, moment} = require('handlebars-helpers')();
+const {moment} = require('handlebars-helpers')();
+const {ifIn} = require('./helpers/Handlebars')
 
 // Initializations
 const app = express();
@@ -24,7 +25,7 @@ app.engine('.hbs', exphbs({
     partialsDir: path.join(app.get('views'), 'partials'),
     extname: '.hbs',
     handlebars: allowInsecurePrototypeAccess(Handlebars),
-    helpers: {inArray, moment}
+    helpers: {moment, ifIn}
 }));
 app.set('view engine', '.hbs');
 
@@ -44,8 +45,6 @@ app.use(multer({dest: path.join(__dirname, './public/img/games_imgs')}).single('
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
-    res.locals.error = req.flash('error');
-    res.locals.user = req.user || null;
     next();
 });
 

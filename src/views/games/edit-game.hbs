@@ -24,7 +24,7 @@
                     <label for="platforms" class="col-form-label"><h6>Platform(s)</h6></label>
                     <select name="platforms" class="selectpicker" multiple data-live-search="true">
                         {{#each platforms.items as |platform|}}
-                            <option {{#inArray ../game.feactures.platforms platform}}selected="selected"{{/inArray}}>{{platform}}</option>
+                            <option {{#ifIn ../game.feactures.platforms platform}}selected="selected"{{/ifIn}}>{{platform}}</option>
                         {{/each}}  
                     </select>
                 </div>
@@ -33,7 +33,7 @@
                         <label for="genres" class="col-form-label"><h6>Genre(s)</h6></label>                       
                         <select name="genres" class="selectpicker" multiple data-live-search="true">
                             {{#each genres.items as |genre|}}
-                                <option {{#inArray ../game.feactures.genres genre}}selected="selected"{{/inArray}}>{{genre}}</option>
+                                <option {{#ifIn ../game.feactures.genres genre}}selected="selected"{{/ifIn}}>{{genre}}</option>
                             {{/each}} 
                         </select>
                     </div>
@@ -41,7 +41,7 @@
                         <label for="themes" class="col-form-label"><h6>Theme(s)</h6></label>
                         <select name="themes" class="selectpicker" multiple data-live-search="true">
                             {{#each themes.items as |theme|}}
-                                <option {{#inArray ../game.feactures.themes theme}}selected="selected"{{/inArray}}>{{theme}}</option>
+                                <option {{#ifIn ../game.feactures.themes theme}}selected="selected"{{/ifIn}}>{{theme}}</option>
                             {{/each}} 
                         </select>
                     </div>
@@ -51,7 +51,7 @@
                         <label for="modes" class="col-form-label"><h6>Mode(s)</h6></label>
                         <select name="modes" class="selectpicker" multiple data-live-search="true">
                             {{#each modes.items as |mode|}}
-                                <option {{#inArray ../game.feactures.modes mode}}selected="selected"{{/inArray}}>{{mode}}</option>
+                                <option {{#ifIn ../game.feactures.modes mode}}selected="selected"{{/ifIn}}>{{mode}}</option>
                             {{/each}}  
                         </select>
                     </div>
@@ -59,7 +59,7 @@
                         <label for="perspectives" class="col-form-label"><h6>Perspective(s)</h6></label>
                         <select name="perspectives" class="selectpicker" multiple data-live-search="true">
                             {{#each perspectives.items as |perspective|}}
-                                <option {{#inArray ../game.feactures.perspectives perspective}}selected="selected"{{/inArray}}>{{perspective}}</option>
+                                <option {{#ifIn ../game.feactures.perspectives perspective}}selected="selected"{{/ifIn}}>{{perspective}}</option>
                             {{/each}} 
                         </select>
                     </div>

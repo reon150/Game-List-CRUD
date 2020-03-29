@@ -55,6 +55,7 @@ gamesCtrl.createNewGame = async (req, res) => {
             const newGame = new Game({title, description, realase_date, feactures, image_path});
             await newGame.save();
         } else {
+            req.flash('error_msg', 'Only image files are allowed')
             res.redirect('/games/add');
         }
     } else {
@@ -62,7 +63,7 @@ gamesCtrl.createNewGame = async (req, res) => {
         await newGame.save();
     }
 
-    
+    req.flash("success_msg", "Game Added Successfully");
     res.redirect('/games');
 };
 
@@ -85,12 +86,14 @@ gamesCtrl.updateGame = async (req, res) => {
 
             await Game.findByIdAndUpdate(req.params.id, {title, description, realase_date, feactures, image_path});
         } else {
+            req.flash('error_msg', 'Only image files are allowed')
             res.redirect('/games/add');
         }
     } else {
         await Game.findByIdAndUpdate(req.params.id, {title, description, realase_date, feactures});
     }
 
+    req.flash('success_msg', 'Game Update Succesfully')
     res.redirect('/games');
 };
 
@@ -100,12 +103,12 @@ gamesCtrl.deleteGame = async (req, res) => {
         await fs.unlink(path.resolve('./src/public/' + image_path)); 
     }
     await Game.findByIdAndDelete(req.params.id);
+    req.flash('success_msg', 'Game Deleted Succesfully')
     res.redirect('/games');
 };
 
 function getFeactures(type) {
     return Game_Feactures.findOne({type})
 }
-
 
 module.exports = gamesCtrl;
