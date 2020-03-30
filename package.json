@@ -1,12 +1,12 @@
 {
   "name": "video-game-list",
-  "version": "1.0.0",
+  "version": "0.5.0",
   "description": "A simple CRUD using express and mongodb",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "keywords": [
     "CRUD",
@@ -15,7 +15,7 @@
     "VideoGames"
   ],
   "author": "Ronald Ogando Negron",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.3",
     "connect-flash": "^0.1.1",
