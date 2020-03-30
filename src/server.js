@@ -7,11 +7,12 @@ const morgan = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
-const multer = require('multer')
+const multer = require('multer');
+const { secret_key } = process.env;
 
 // Helpers
 const {moment} = require('handlebars-helpers')();
-const {ifIn} = require('./helpers/Handlebars')
+const {ifIn} = require('./helpers/Handlebars');
 
 // Initializations
 const app = express();
@@ -34,7 +35,7 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(session({
-    secret: 'mysecrectkey',
+    secret: secret_key,
     resave: true,
     saveUninitialized: true
 }));
@@ -54,7 +55,5 @@ app.use(require('./routes/gamelist.routes'));
 
 // Static Files
 app.use(express.static(path.join(__dirname, 'public')));
-
-
 
 module.exports = app;

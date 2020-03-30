@@ -55,6 +55,7 @@ gamesCtrl.createNewGame = async (req, res) => {
             const newGame = new Game({title, description, realase_date, feactures, image_path});
             await newGame.save();
         } else {
+            await fs.unlink(imageTempPath);
             req.flash('error_msg', 'Only image files are allowed')
             res.redirect('/games/add');
         }
@@ -86,6 +87,7 @@ gamesCtrl.updateGame = async (req, res) => {
 
             await Game.findByIdAndUpdate(req.params.id, {title, description, realase_date, feactures, image_path});
         } else {
+            await fs.unlink(imageTempPath);
             req.flash('error_msg', 'Only image files are allowed')
             res.redirect('/games/add');
         }

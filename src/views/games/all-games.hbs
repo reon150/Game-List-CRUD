@@ -3,7 +3,7 @@
     <div class="card m-3" style="width: 22rem;">
       <img src="{{image_path}}" class="card-img-top" alt="This Game doesn't have an image :'(" style="width: 22rem; height: 20rem;">
       <div class="card-body">
-        <h5 class="card-title d-inline">{{title}}</h5><a href="/games/delete/{{_id}}"><i class="far fa-trash-alt float-right"></i></a><a href="/games/edit/{{_id}}"><i class="far fa-edit float-right mx-2"></i></a>
+        <h5 class="card-title d-inline">{{title}}</h5><a href="/games/delete/{{_id}}" class="delete"><i class="far fa-trash-alt float-right"></i></a><a href="/games/edit/{{_id}}"><i class="far fa-edit float-right mx-2"></i></a>
         <h6 class="text-muted">{{moment realase_date format="DD-MM-YYYY" }}</h6>
         <ol class="breadcrumb mb-2">
           {{#each feactures.platforms}}
@@ -18,3 +18,4 @@
     </div>
   {{/each}}
 </div>
+<script src="/js/deleteButtons.js"></script>

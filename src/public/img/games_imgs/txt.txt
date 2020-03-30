@@ -1,0 +1,1 @@
+The purpose of this file is to commit "games_imgs" folder
