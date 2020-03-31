@@ -1,9 +1,6 @@
 # Dependency directory
 node_modules/
 
-# dotenv environment variables file
-.env
-
 src/public/img/games_imgs/*.jpeg
 src/public/img/games_imgs/*.png
 src/public/img/games_imgs/*.jpg
