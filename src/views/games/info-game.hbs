@@ -1,12 +1,16 @@
 <p class="h2 text-center">{{game.title}}</p>
 <div class="mt-3"></div>
-<img src="{{game.image_path}}" class="rounded float-left" alt="This game doesn't have an image :'(" style="width: 22rem; height: 20rem;">
-<p class="h5 d-inline ml-2">Realase:<h6 class="text-muted d-inline ml-2">{{moment game.realase_date format="DD-MM-YYYY" }}</h6></p>
+{{#if game.image_path}}
+    <img src="{{game.image_path}}" class="rounded float-left" alt="{{game.title}}" style="width: 22rem; height: 20rem;">
+{{/if}}
+<p class="h5 d-inline ml-2">Realase:
+<h6 class="text-muted d-inline ml-2">{{moment game.realase_date format="DD-MM-YYYY" }}</h6>
+</p>
 <div class="d-block my-3">
     <p class="h5 d-inline ml-2">Platform(s): </p>
     <ol class="breadcrumb d-inline" style="background-color:transparent;">
         {{#each game.feactures.platforms}}
-            <li class="breadcrumb-item d-inline" >{{this}}</li>
+        <li class="breadcrumb-item d-inline">{{this}}</li>
         {{/each}}
     </ol>
 </div>
@@ -14,7 +18,7 @@
     <p class="h5 d-inline ml-2">Games Mode(s): </p>
     <ol class="breadcrumb d-inline" style="background-color:transparent;">
         {{#each game.feactures.modes}}
-            <li class="breadcrumb-item d-inline" >{{this}}</li>
+        <li class="breadcrumb-item d-inline">{{this}}</li>
         {{/each}}
     </ol>
 </div>
@@ -22,7 +26,7 @@
     <p class="h5 d-inline ml-2">Theme(s): </p>
     <ol class="breadcrumb d-inline" style="background-color:transparent;">
         {{#each game.feactures.themes}}
-            <li class="breadcrumb-item d-inline" >{{this}}</li>
+        <li class="breadcrumb-item d-inline">{{this}}</li>
         {{/each}}
     </ol>
 </div>
@@ -30,7 +34,7 @@
     <p class="h5 d-inline ml-2">Genre(s): </p>
     <ol class="breadcrumb d-inline" style="background-color:transparent;">
         {{#each game.feactures.genres}}
-            <li class="breadcrumb-item d-inline" >{{this}}</li>
+        <li class="breadcrumb-item d-inline">{{this}}</li>
         {{/each}}
     </ol>
 </div>
@@ -38,7 +42,7 @@
     <p class="h5 d-inline ml-2">Perspective(s): </p>
     <ol class="breadcrumb d-inline" style="background-color:transparent;">
         {{#each game.feactures.perspectives}}
-            <li class="breadcrumb-item d-inline" >{{this}}</li>
+        <li class="breadcrumb-item d-inline">{{this}}</li>
         {{/each}}
     </ol>
 </div>

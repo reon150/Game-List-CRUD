@@ -1,21 +1,26 @@
 <div class="d-flex flex-wrap justify-content-around ">
-  {{#each games}}
+    {{#each games}}
     <div class="card m-3" style="width: 22rem;">
-      <img src="{{image_path}}" class="card-img-top" alt="This Game doesn't have an image :'(" style="width: 22rem; height: 20rem;">
-      <div class="card-body">
-        <h5 class="card-title d-inline">{{title}}</h5><a href="/games/delete/{{_id}}" class="delete"><i class="far fa-trash-alt float-right"></i></a><a href="/games/edit/{{_id}}"><i class="far fa-edit float-right mx-2"></i></a>
-        <h6 class="text-muted">{{moment realase_date format="DD-MM-YYYY" }}</h6>
-        <ol class="breadcrumb mb-2">
-          {{#each feactures.platforms}}
-            <li class="breadcrumb-item">{{this}}</li>
-          {{/each}}
-        </ol>
-        <br>
-        <div class="text-center my-2" style="position: absolute; bottom:0; margin-right: auto; margin-left: auto; left:0; right:0">
-          <a href="/games/info/{{_id}}" class="btn btn-primary">More Information</a>
+        {{#if image_path}}
+        <img src="{{image_path}}" class="card-img-top" alt="{{title}}" style="width: 22rem; height: 20rem;">
+        {{/if}}
+        <div class="card-body">
+            <h5 class="card-title d-inline">{{title}}</h5><a href="/games/delete/{{_id}}" class="delete"><i
+                    class="far fa-trash-alt float-right"></i></a><a href="/games/edit/{{_id}}"><i
+                    class="far fa-edit float-right mx-2"></i></a>
+            <h6 class="text-muted">{{moment realase_date format="DD-MM-YYYY" }}</h6>
+            <ol class="breadcrumb mb-2">
+                {{#each feactures.platforms}}
+                <li class="breadcrumb-item">{{this}}</li>
+                {{/each}}
+            </ol>
+            <br>
+            <div class="text-center my-2"
+                style="position: absolute; bottom:0; margin-right: auto; margin-left: auto; left:0; right:0">
+                <a href="/games/info/{{_id}}" class="btn btn-primary">More Information</a>
+            </div>
         </div>
-      </div>
     </div>
-  {{/each}}
+    {{/each}}
 </div>
 <script src="/js/deleteButtons.js"></script>

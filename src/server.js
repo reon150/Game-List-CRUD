@@ -11,8 +11,8 @@ const multer = require('multer');
 const { secret_key } = process.env;
 
 // Helpers
-const {moment} = require('handlebars-helpers')();
-const {ifIn} = require('./helpers/Handlebars');
+const { moment } = require('handlebars-helpers')();
+const { ifIn }  = require('./helpers/Handlebars');
 
 // Initializations
 const app = express();
@@ -26,7 +26,7 @@ app.engine('.hbs', exphbs({
     partialsDir: path.join(app.get('views'), 'partials'),
     extname: '.hbs',
     handlebars: allowInsecurePrototypeAccess(Handlebars),
-    helpers: {moment, ifIn}
+    helpers: { moment, ifIn }
 }));
 app.set('view engine', '.hbs');
 

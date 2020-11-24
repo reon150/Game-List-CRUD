@@ -4,3 +4,5 @@ node_modules/
 src/public/img/games_imgs/*.jpeg
 src/public/img/games_imgs/*.png
 src/public/img/games_imgs/*.jpg
+
+.env
